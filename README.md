@@ -18,7 +18,7 @@ If yours reports something different, make an issue/pull request and I'll add it
 1. For the action, do `Start a Program` and browse for `NeverWake.bat`
 1. Check `Open the properties dialog when I click Finish`
 1. Check `Run whether user is logged on or not`
-1. Under conditions, *uncheck* `Start the task on if computer is on AC power` and hit OK.
+1. Under conditions, *uncheck* `Start the task only if computer is on AC power` and hit OK.
 1. Done. Your PC should now go back to sleep if a Windows service or any other program wakes it up.
 
 ## Help! Computer always sleeps when I wake it up
