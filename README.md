@@ -21,6 +21,12 @@ If yours reports something different, make an issue/pull request and I'll add it
 1. Under conditions, *uncheck* `Start the task only if computer is on AC power` and hit OK.
 1. Done. Your PC should now go back to sleep if a Windows service or any other program wakes it up.
 
+## How do I know it works?
+1. Enable all task history
+1. Click on an `Action Completed` event
+1. View the exit code. 0 = nothing 1 = resleep
+![Image of task scheduler with locations marked out](/images/logging.png)
+
 ## Help! Computer always sleeps when I wake it up
 
 To fix this you either have to [boot into safe mode](https://support.microsoft.com/en-us/help/12376/windows-10-start-your-pc-in-safe-mode) or just **power down and restart your pc completely** (as a cold boot will not fire the power-troubleshooter event).
