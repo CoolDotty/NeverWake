@@ -7,6 +7,8 @@ set lastwake=%lastwake: =%
 del %~dp0lastwake.temp
 if "%lastwake%" == "PowerButton" (
 	echo Good Wake
+	exit 0
 ) ELSE (
 	psshutdown -d -t 0 -accepteula
+	exit 1
 )
