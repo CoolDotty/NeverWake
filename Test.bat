@@ -22,7 +22,14 @@ del %~dp0lastwake.temp
 if "%lastwake%" == "PowerButton" (
 	echo User wakeup detected. NeverWake should work without issue.
 ) ELSE (
+	if "%lastwake:~0,15%" == "WakeSourceCount" (
+		:: Hibernate wakeup fires a troubleshooter event
+		:: But clears the wakeup reasons instead of logging a new one
+		echo User wakeup detected. NeverWake should work without issue.
+		goto END
+	)
 	echo Improper wakeup detected. Wakeup type "%lastwake%".
 	echo If this type should be treated as correct, report it as an issue on Github.
 )
+:END
 pause
