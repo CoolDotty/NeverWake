@@ -9,6 +9,12 @@ if "%lastwake%" == "PowerButton" (
 	echo Good Wake
 	exit 0
 ) ELSE (
+	if "%lastwake:~0,15%" == "WakeSourceCount" (
+		:: Hibernate wakeup fires a troubleshooter event
+		:: But clears the wakeup reasons instead of logging a new one
+		echo Hibernate Wake
+		exit 0
+	)
 	psshutdown -d -t 0 -accepteula
 	exit 1
 )
