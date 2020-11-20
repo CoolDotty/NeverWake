@@ -3,6 +3,15 @@
 * Stop Windows from killing your laptop by trying to install updates in your backpack.
 * Stop Windows from waking *you* up at night by spinning your gamer fans to 100.
 
+## Update for those who want to disable wakeups through configs
+It's been a couple days since the last time the script has had to resleep. To recap:
+
+* Use `powercfg -lastwake` to see why your pc is on. If its `Power Button` than you have a hardware issue (ex: laptop is getting jostled enough in your bag to wake up)
+* Ensure `powercfg /devicequery wake_armed` is empty
+* In `Task Scheduler Library` → `Microsoft` → `Windows` → `UpdateOrchestrator`, make sure none of the tasks are set to `Wake the computer to run this task`
+* Disable wake timers in advanced power settings
+* Disable hibernating after x minutes in advanced power settings as suggested by [concrete_d](https://old.reddit.com/r/gpdwin/comments/iqmdeo/windows_kept_waking_up_my_max_in_my_bag_so_heres/g50mnfg/)
+
 ## Does What?
 Simple script that sends your PC back to sleep if the wakeup source was **not** `Power Button`.
 For me, `powercfg -lastwake` always reports the wake source as `Power Button` regardless of if its opening the lid, mashing the keyboard, or doing exactly that.
